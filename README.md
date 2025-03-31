@@ -1,19 +1,3 @@
-<p align="center">
-  <img width="400px" src="https://github.com/user-attachments/assets/6d37cd69-a232-4444-9f91-30e5942a8938" />
-</p>
-
-<h1 align="center">OpenWrt for Rockchip & X86_64</h1>
-
-<p align="center">
-  <img width="300px" src="https://openwrt.kejizero.online" />
-</p>
-
-<p align="center">
-  <b>基于原生 <a href="https://github.com/openwrt/openwrt" target="_blank" >OpenWrt</a> 更改与优化的固件，提供高效、稳定的使用体验！</b>
-</p>
-
--------
-
 ## 固件下载
 
 **Rockchip: https://openwrt.kejizero.online/ZeroWrt/Rockchip**
@@ -43,4 +27,4 @@
 - 默认所有网口可访问网页终端
 - 默认设置所有网口可连接 SSH
 - 默认已经切换了docker源，国内网络即可拉取镜像
-- 插件包含：师夷长技以制夷，Open克拉斯，Adguardhome，Homeproxy，Mosdns，Lucky，动态DNS，FRP客户端，Nikki，Samba4，SmartDNS，Dockerman，Alist，USB打印机服务，Webdav，应用过滤，Socat，netspeedtest，qbittorrent，airplay2，锐捷认证
+- GPU 硬件加速、BBRv3 拥塞控制、Shortcut-FE（支持 UDP 入站）、	NAT6、全锥型 NAT（NFT、BCM 双方案）相关支持
