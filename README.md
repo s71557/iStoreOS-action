@@ -5,7 +5,7 @@
 <h1 align="center">OpenWrt for Rockchip & X86_64</h1>
 
 <p align="center">
-  <img width="300px" src="https://cdn.cooluc.com/r4s/r5s_.webp" />
+  <img width="300px" src="https://openwrt.kejizero.online" />
 </p>
 
 <p align="center">
