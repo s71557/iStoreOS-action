@@ -1,8 +1,16 @@
-## 固件下载
+## 鸣谢
 
-**Rockchip: https://openwrt.kejizero.online/ZeroWrt/Rockchip**
+Openwrt 官方项目：
 
-**X86_64: https://openwrt.kejizero.online/ZeroWrt/X86_64**
+<https://github.com/openwrt/openwrt>
+
+Lean 大的 Openwrt 项目：
+
+<https://github.com/coolsnowwolf/lede>
+
+immortalwrt 的 OpenWrt 项目：
+
+<https://github.com/immortalwrt/immortalwrt>
 
 ## 默认信息
 
