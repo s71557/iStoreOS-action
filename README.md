@@ -8,7 +8,7 @@
 
 - **管理地址：[http://10.0.0.1](http://10.0.0.1) 或 [http://openwrt.lan](http://openwrt.lan)**
 - **账户：root**
-- **密码：password
+- **密码：password**
 
 ## 官方讨论群
 
