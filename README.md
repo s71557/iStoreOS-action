@@ -1,17 +1,3 @@
-## 鸣谢
-
-Openwrt 官方项目：
-
-<https://github.com/openwrt/openwrt>
-
-Lean 大的 Openwrt 项目：
-
-<https://github.com/coolsnowwolf/lede>
-
-immortalwrt 的 OpenWrt 项目：
-
-<https://github.com/immortalwrt/immortalwrt>
-
 ## 默认信息
 
 - **管理地址：[http://10.0.0.1](http://10.0.0.1) 或 [http://openwrt.lan](http://openwrt.lan)**
