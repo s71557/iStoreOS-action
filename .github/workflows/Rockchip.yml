@@ -1,4 +1,4 @@
-name: Rockchip
+name: 官方iStoreOS_Rockchip
 
 on:
   workflow_dispatch:
