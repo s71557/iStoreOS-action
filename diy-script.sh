@@ -33,6 +33,7 @@ rm -rf feeds/packages/net/v2ray-geodata
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone https://github.com/sbwml/luci-app-mentohust package/mentohust
+git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
 
 ### 个性化设置
 sed -i 's/iStoreOS/ZeroWrt/' package/istoreos-files/files/etc/board.d/10_system
@@ -58,6 +59,8 @@ curl -s https://git.kejizero.online/zhao/files/raw/branch/main/bin/version.txt >
 chmod -R 777 files/bin/ZeroWrt
 chmod -R 777 files/root/version.txt
 
+# default-settings
+git clone --depth=1 -b iStoreOS https://github.com/oppen321/default-settings package/default-settings
 # 更新Feeds
 ./scripts/feeds update -a
 ./scripts/feeds install -a
