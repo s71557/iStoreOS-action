@@ -23,5 +23,9 @@ git clone --depth=1 -b master https://github.com/linkease/nas-packages package/n
 git clone --depth=1 -b main https://github.com/linkease/nas-packages-luci package/nas-packages-luci
 git clone --depth=1 -b main https://github.com/jjm2473/openwrt-apps package/openwrt-apps
 
+# istoreos
+sed -i 's/iStoreOS/ZeroWrt/' package/istoreos-files/files/etc/board.d/10_system
+sed -i 's/192.168.100.1/10.0.0.1/' package/istoreos-files/Makefile
+
 ./scripts/feeds update -a
 ./scripts/feeds install -a
