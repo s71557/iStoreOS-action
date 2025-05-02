@@ -1,4 +1,4 @@
-name: x86_iStoreOS
+name: 官方iStoreOS_X86_64
 
 on:
   workflow_dispatch:
