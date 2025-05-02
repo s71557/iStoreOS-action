@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# 修改默认IP
-#sed -i 's/192.168.100.1/10.0.0.1/g' package/base-files/files/bin/config_generate
-
-# 更改 Argon 主题背景
-cp -f $GITHUB_WORKSPACE/images/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
-
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
   branch="$1" repourl="$2" && shift 2
@@ -40,9 +34,30 @@ git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone https://github.com/sbwml/luci-app-mentohust package/mentohust
 
-# istoreos
+### 个性化设置
 sed -i 's/iStoreOS/ZeroWrt/' package/istoreos-files/files/etc/board.d/10_system
 sed -i 's/192.168.100.1/10.0.0.1/' package/istoreos-files/Makefile
+# 加入作者信息
+sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='ZeroWrt-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
+sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION=' By OPPEN321'/g" package/base-files/files/etc/openwrt_release
+# 更换默认背景
+cp -f $GITHUB_WORKSPACE/images/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+# 更换banner
+cp -f $GITHUB_WORKSPACE/images/banner package/base-files/files/etc/banner
+# bash
+sed -i 's#ash#bash#g' package/base-files/files/etc/passwd
+sed -i '\#export ENV=/etc/shinit#a export HISTCONTROL=ignoredups' package/base-files/files/etc/profile
+mkdir -p files/root
+curl -so files/root/.bash_profile https://git.kejizero.online/zhao/files/raw/branch/main/root/.bash_profile
+curl -so files/root/.bashrc https://git.kejizero.online/zhao/files/raw/branch/main/root/.bashrc
+# 载入脚本
+mkdir -p files/bin
+mkdir -p root/
+curl -s https://git.kejizero.online/zhao/files/raw/branch/main/bin/ZeroWrt > files/bin/ZeroWrt
+curl -s https://git.kejizero.online/zhao/files/raw/branch/main/bin/version.txt > files/root/version.txt
+chmod -R 777 files/bin/ZeroWrt
+chmod -R 777 files/root/version.txt
 
+# 更新Feeds
 ./scripts/feeds update -a
 ./scripts/feeds install -a
