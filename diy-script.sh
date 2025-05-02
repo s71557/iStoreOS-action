@@ -16,7 +16,7 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 
-# 更新 golang 1.23 版本
+# 更新 golang 1.24 版本
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
 
