@@ -26,8 +26,7 @@ git clone --depth=1 -b main https://github.com/jjm2473/openwrt-apps package/open
 rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
 git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki package/nikki
-# git clone https://github.com/Jaykwok2999/luci-app-passwall.git package/passwall -b main
-
+git clone https://github.com/sbwml/openwrt_helloworld package/helloworld
 
 ### 个性化设置
 sed -i 's/iStoreOS/StoneOS/' package/istoreos-files/files/etc/board.d/10_system
