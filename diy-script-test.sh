@@ -31,9 +31,14 @@ git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki package/nikk
 ### 个性化设置
 sed -i 's/iStoreOS/StoneOS/' package/istoreos-files/files/etc/board.d/10_system
 sed -i 's/192.168.100.1/192.168.100.1/' package/istoreos-files/Makefile
+sed -i 's/192.168.1.1/192.168.100.1/g' package/base-files/files/bin/config_generate
 # 加入作者信息
 sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='StoneOS-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
 sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION=' By Stone'/g" package/base-files/files/etc/openwrt_release
+# TTYD
+sed -i 's/services/system/g' feeds/luci/applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json
+# 修改默认密码
+sed -i 's/root:::0:99999:7:::/root:$1$5mjCdAB1$Uk1sNbwoqfHxUmzRIeuZK1:0:0:99999:7:::/g' package/base-files/files/etc/shadow
 # 更换默认背景
 cp -f $GITHUB_WORKSPACE/images/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 # 更换banner
@@ -52,8 +57,8 @@ cp -f $GITHUB_WORKSPACE/images/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-
 # chmod -R 777 files/bin/ZeroWrt
 # chmod -R 777 files/root/version.txt
 
-# default-settings
-# git clone --depth=1 -b iStoreOS https://github.com/oppen321/default-settings package/default-settings
+# iStoreOS-settings
+git clone --depth=1 -b main https://github.com/s71557/istoreos-settings package/default-settings
 # 更新Feeds
 ./scripts/feeds update -a
 ./scripts/feeds install -a
