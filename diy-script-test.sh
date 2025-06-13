@@ -23,13 +23,16 @@ git clone --depth=1 -b main https://github.com/linkease/nas-packages-luci packag
 git clone --depth=1 -b main https://github.com/jjm2473/openwrt-apps package/openwrt-apps
 
 # 科学上网插件
-# rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
+rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
+rm -rf feeds/third_party/luci-app-LingTiGameAcc
+rm -rf package/diy/luci-app-ota
 git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 # git clone --depth=1 https://github.com/nikkinikki-org/OpenWrt-nikki package/nikki
 # git clone https://github.com/sbwml/openwrt_helloworld package/helloworld
 git clone https://github.com/xiaorouji/openwrt-passwall-packages package/passwall-packages
 git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
-
+git_sparse_clone main https://github.com/s71557/istoreos-ota luci-app-ota
+git_sparse_clone main https://github.com/zijieKwok/github-ota fw_download_tool
 ### 个性化设置
 sed -i 's/iStoreOS/StoneOS/' package/istoreos-files/files/etc/board.d/10_system
 sed -i 's/192.168.100.1/192.168.100.1/' package/istoreos-files/Makefile
