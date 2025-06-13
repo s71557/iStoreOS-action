@@ -60,7 +60,7 @@ cp -f $GITHUB_WORKSPACE/images/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-
 # chmod -R 777 files/root/version.txt
 
 # iStoreOS-settings
-# git clone --depth=1 -b main https://github.com/s71557/istoreos-settings package/default-settings
+git clone --depth=1 -b main https://github.com/s71557/istoreos-settings package/default-settings
 # 更新Feeds
 ./scripts/feeds update -a
 ./scripts/feeds install -a
